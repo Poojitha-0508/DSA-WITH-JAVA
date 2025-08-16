@@ -20,7 +20,7 @@ public class Main
 		int start=0,end=arr.length-1;
 		int mid;
 		while(start<=end){
-			mid=(start+end)/2;
+			mid=(start+(end-start))/2;
 			if(arr[mid]==key){
 				return arr[mid];
 			}
