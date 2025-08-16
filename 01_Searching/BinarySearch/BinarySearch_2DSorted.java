@@ -30,7 +30,7 @@ class Main{
         int colMid=(colStart+colEnd)/2;
         
         while(rowStart<(rowEnd-1)){
-            int rowMid=(rowStart+rowEnd)/2;
+            int rowMid=(rowStart+(rowEnd-rowStart))/2;
             if(matrix[rowMid][colMid]==target){
                 return new int[]{rowMid,colMid};
             }
@@ -66,7 +66,7 @@ class Main{
     }
     static int[] BinarySearch(int[][] matrix,int target,int row,int colStart,int colEnd){
 		while(colStart<=colEnd){
-			int mid=(colStart+colEnd)/2;
+			int mid=(colStart+(colEnd-colStart))/2;
 			if(matrix[row][mid]==target){
 				return new int[]{row,mid};
 			}
