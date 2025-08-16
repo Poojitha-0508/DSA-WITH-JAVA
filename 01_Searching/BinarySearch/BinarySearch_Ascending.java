@@ -11,18 +11,17 @@ public class Main
 	    for (int i=0;i<n;i++){
 	        	arr[i]=in.nextInt();
 		}
-		int key=in.nextInt();
-	    System.out.println(BinarySearch(arr,key));
+		int target=in.nextInt();
+	    System.out.println(BinarySearch(arr,target));
 	}
-	static int BinarySearch(int[] arr,int key){
+	static int BinarySearch(int[] arr,int target){
 		int start=0,end=arr.length-1;
-		int mid;
 		while(start<=end){
-			mid=(start+end)/2;
-			if(arr[mid]==key){
+			int mid=(start+end)/2;
+			if(arr[mid]==target){
 				return mid;
 			}
-			else if (arr[mid]>key){
+			else if (arr[mid]>target){
 				end=mid-1;
 			}
 			else{
