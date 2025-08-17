@@ -1,5 +1,4 @@
-// SEARCH FOR AN ELEMENT IN THE GIVEN INCREASING SORTED ARRAY USING BINARY SEARCH
-
+// SEARCH FOR AN ELEMENT IN THE ARRAY (ASCENDING) USING BINARY SEARCH
 
 import java.util.*;
 public class Main
@@ -11,22 +10,23 @@ public class Main
 	    for (int i=0;i<n;i++){
 	        	arr[i]=in.nextInt();
 		}
-		int target=in.nextInt();
-	    System.out.println(BinarySearch(arr,target));
+		int key=in.nextInt();
+	    System.out.println(BinarySearch(arr,key));
 	}
-	static int BinarySearch(int[] arr,int target){
+	static int BinarySearch(int[] arr,int key){
 		int start=0,end=arr.length-1;
+
 		while(start<=end){
-			int mid=(start+(end-start))/2;
-			if(arr[mid]==target){
+			int mid=(start+end)/2;
+			if(arr[mid]==key){
 				return mid;
 			}
-			else if (arr[mid]>target){
-				end=mid-1;
-			}
-			else{
-				start=mid+1;
-			}
+            else if (arr[mid]>key){
+			    end=mid-1;
+            }
+            else{
+                start=mid+1;
+            }
 		}
 		return -1;
 	}
